@@ -3,19 +3,26 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    es2021: true,
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
   extends: [
-    'plugin:nuxt/recommended',
+    'eslint:recommended',
     'plugin:vue/vue3-recommended',
-    'plugin:vuejs-accessibility/recommended',
+    'plugin:nuxt/recommended',
     '@nuxtjs/eslint-config-typescript',
+    'plugin:vuejs-accessibility/recommended',
     'prettier',
   ],
-  plugins: ['@typescript-eslint', 'vuejs-accessibility'],
+  plugins: [
+    '@typescript-eslint',
+    'vuejs-accessibility',
+  ],
   rules: {
     'vue/order-in-components': [
       'error',
@@ -57,7 +64,8 @@ module.exports = {
         ],
       },
     ],
-    'vue/multi-word-component-names': 'off',
-    // Add any additional rules or overrides here
+    'vue/multi-word-component-names': 'off', // Often off for Nuxt pages/layouts
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
   },
 };
