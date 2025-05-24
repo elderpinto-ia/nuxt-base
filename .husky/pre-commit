@@ -1,4 +1,6 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
 
-npm test
+# The user might have commented out a problematic line here.
+# We will now set it to run lint-staged.
+npx lint-staged

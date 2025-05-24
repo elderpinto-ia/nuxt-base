@@ -1,0 +1,16 @@
+// tailwind.config.js
+module.exports = {
+  content: [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./nuxt.config.{js,ts}",
+    "./app.vue",
+    "./modules/**/*.{js,vue,ts}", // Added modules
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [require('daisyui')], // Add DaisyUI
+}

@@ -35,8 +35,14 @@
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-vue": "^10.1.0",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "lint-staged": "^16.0.0",
     "prettier": "^3.5.3"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
